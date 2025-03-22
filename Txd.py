@@ -90,7 +90,7 @@ def time_closes(makers,i):
         time_close[time] = close
     return time_close
 print(time_closes(1,'600000'))
-# 主程序
+# 主程序（无修改）
 
 # for i in all_stock():
 #     if i[0:3] == '000' or i[0:3] == '001' or i[0:3] == '002':
