@@ -90,25 +90,29 @@ def time_closes(makers,i):
         time_close[time] = close
     return time_close
 print(time_closes(1,'600000'))
+
+
 # 主程序（无修改）
+def main():
+    for i in all_stock():
+        if i[0:3] == '000' or i[0:3] == '001' or i[0:3] == '002':
+            makers = 0
+        else:
+            makers = 1
+        # a = api.get_history_transaction_data(makers, i, nine_35_station(0, i, time),nine_25_station(0, i, time) - nine_35_station(0, i, time), time)
+        # b = 0
+        # for y in a:
+        #     # print((y['price']-close)/close*100)
+        #     if (y['price'] - close) / close * 100 <= 80:
+        #         if b <= y['price']:
+        #             b = y['price']
+        #         else:
+        #             print(i)
+        #             print('下降排除')
+        #             break
+        #     else:
+        #         print('选择这个')
 
-# for i in all_stock():
-#     if i[0:3] == '000' or i[0:3] == '001' or i[0:3] == '002':
-#         makers = 0
-#     else:
-#         makers = 1
-#     a = api.get_history_transaction_data(makers, i, nine_35_station(0, i, time),nine_25_station(0, i, time) - nine_35_station(0, i, time), time)
-#     b = 0
-#     for y in a:
-#         # print((y['price']-close)/close*100)
-#         if (y['price'] - close) / close * 100 <= 80:
-#             if b <= y['price']:
-#                 b = y['price']
-#             else:
-#                 print(i)
-#                 print('下降排除')
-#                 break
-#         else:
-#             print('选择这个')
-#
 
+if __name__ == '__main__':
+    main()
